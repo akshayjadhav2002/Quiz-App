@@ -1,6 +1,7 @@
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
+import "package:google_fonts/google_fonts.dart";
 import "package:percent_indicator/circular_percent_indicator.dart";
 import 'package:provider/provider.dart';
 import "package:quizzapp/View/home_screen.dart";
@@ -42,7 +43,7 @@ class _ResultScreenState extends State<ResultScreen> {
             top: 350,
             left: 30,
             child: Container(
-              height: 311,
+              height: 350,
               width: 330,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
@@ -140,7 +141,88 @@ class _ResultScreenState extends State<ResultScreen> {
             ),
           ),
           Positioned(
-            top: 580,
+            top: 590,
+            left: 50,
+            child: Row( 
+              children: [ 
+                Container(
+                  height: 95,
+                  width: 145,
+                  decoration: BoxDecoration( 
+                    borderRadius: BorderRadius.circular(15),
+                    color:const Color.fromRGBO(250, 245, 241, 1),
+                  ),
+                  child:  Center( 
+                    child: Column(
+                      
+                      children: [
+                         SizedBox(
+                          height: 50,
+                          width: 90,
+                           child: Text(
+                              "Solved Questions",
+                              style: GoogleFonts.dmSans(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: const Color.fromRGBO(131, 76, 52, 1),
+                              ),
+                          ),
+                         ),
+                        Text(
+                          "${questionProvider.questionslist.length}",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w700,
+                                color: const Color.fromRGBO(131, 76, 52, 1),
+                              ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 95,
+                  width: 145,
+                  decoration: BoxDecoration( 
+                    borderRadius: BorderRadius.circular(15),
+                    color:const Color.fromRGBO(26, 181, 134, 1),
+                  ),
+                  child: Center( 
+                    child: Column(
+                      children: [
+                         SizedBox(
+                          height: 50,
+                          width: 90,
+                           child: Text(
+                              "Correct Questions",
+                              style: GoogleFonts.dmSans(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: const Color.fromARGB(255, 255, 253, 253),
+                              ),
+                          ),
+                         ),
+                        Text(
+                          "${questionProvider.marks}",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w700,
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+
+              ],
+            )
+            ),
+           Positioned(
+            top: 710,
             left: 130,
             child: ElevatedButton(
               onPressed: () {
